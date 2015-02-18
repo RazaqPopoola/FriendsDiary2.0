@@ -3,6 +3,7 @@
 	class Input {
 		
 		public static function exists($type = 'post') {
+			
 			switch($type) {
 				case 'post':
 					return (!empty($_POST)) ? true : false;

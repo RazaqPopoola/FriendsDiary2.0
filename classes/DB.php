@@ -50,6 +50,7 @@
 		}
 		
 		public function action($action, $table, $where = array()) {
+			
 			if(count($where) === 3) {
 				$operators = array('=', '>', '<', '>=', '<=');
 				

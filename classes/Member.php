@@ -29,16 +29,18 @@
 		}
 		
 		public function create($fields = array()) {
+			
 			if(!$this->_db->insert('members', $fields)) {
-				throw new Exception('There was a problem creating an account.');
 				
+				throw new Exception('There was a problem creating an account.');
 			}
 		}
 		
 		public function find($member = null) {
+			
 			if($member) {
 				$field = (is_numeric($member)) ? 'id' : 'username';
-				$data = $this->_db->get('members', array($field, '=', $user));
+				$data = $this->_db->get('members', array($field, '=', $member));
 				
 				if($data->count()) {
 					$this->_data = $data->first();				
@@ -47,6 +49,7 @@
 			}
 			return false;
 		}
+		
 		public function login($username = null, $password = null, $remember = false) {
 			
 			if(!$username && !$password && $this->exists()) {

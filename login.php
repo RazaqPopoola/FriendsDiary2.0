@@ -11,9 +11,9 @@
 			));
 			
 			if($validation->passed()) {
-				$user = new User();
+				$member = new Member();
 				$remember =(Input::get('remember') === 'on')  ? true : false;
-				$login = $user->login(Input::get('username'), Input::get('password'), $remember);
+				$login = $member->login(Input::get('username'), Input::get('password'), $remember);
 				
 				if($login){
 					Redirect::to('index.php');
