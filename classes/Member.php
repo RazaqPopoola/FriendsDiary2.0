@@ -83,6 +83,25 @@
 			}
 		}
 		
+		public function update($fields = array(), $id = null){
+				
+			if(!$id && $this->isLoggedIn()){
+				
+				$id = $this->data()->id;
+			}
+			
+			if(!$this->_db->update('members', $id, $fields)){
+				throw new Exception('There was poblem updating');
+			}
+		}
+		
+		public function hasPermission(){
+			
+			$group = $this->_db->get('group', array('id', '=', $this->data()->group));
+			print_r($group->first());
+		}
+		
+		
 		public function exists() {
 			
 			return (!empty($this->_data)) ? true : false;

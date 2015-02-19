@@ -10,7 +10,7 @@
 						'required' => true,
 						'min' => 2,
 						'max' => 20,
-						'unique' => 'patients'
+						'unique' => 'members'
 					),
 					'password' => array(
 						'required' => true,
@@ -38,8 +38,8 @@
 					 	'password' => Hash::make(Input::get('password'), $salt),
 					 	'salt' => $salt,
 					 	'name' => Input::get('name'),
-					 	'joined' => date('Y-m-d H:i:s'),
-					 	'group' => 1
+					 	'datejoined' => date('Y-m-d H:i:s'),
+					 	'groupid' => 1
 					 ));
 					 
 					 Session::flash('home', 'You have been registered and can now log in!');
