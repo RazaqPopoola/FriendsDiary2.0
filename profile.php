@@ -1,12 +1,27 @@
 <?php 
 
 	include_once('core/init.php'); 
+	
+	if(!$username = Input::get('member')){
+		
+		Redirect::to('index.php');
+	}else{
+		
+		$member = new Member($username);
+		if(!$member->exists()){
+			Redirect::to(404);
+		}else{
+			
+			$data = $member->data();
+		}	
+	}
+	
 ?>
 
 	<!DOCTYPE HTML>
 		<html>
 			<head>
-				<title><?php echo $page['title']. '|'.$site_title ?> | ></title>
+				<title>Member Profile</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				
 				<?php include('settings/css.php'); ?>
@@ -15,25 +30,22 @@
 			
 			<body>
 				<div id="wrap">
-					<?php include(D_TEMPLATE.'/navigation.php'); ?>
+					<?php include('template/navigation.php'); ?>
 						
 						<div class="container">
 							
 							<i class=" fa fa-fax fax 5x"></i>
 							<i class="fa fa-university"></i>
 						
-							<h1><?php echo $page['header']; ?></h1>
-							
-							<?php echo $page['body_formatted']; ?>
 							
 							
 						</div><!-- End container -->
 						
 				</div><!--- End wrap -->
-					
-				<?php include(D_TEMPLATE.'/footer.php'); ?>
 				
-				<?php if($debug == 1) { include('widget/debug.php'); }	?>
-				
+				<?php include('template/footer.php'); ?>
 			</body>
+			
+			
+		
 		</html>

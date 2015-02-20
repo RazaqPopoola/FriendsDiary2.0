@@ -95,10 +95,21 @@
 			}
 		}
 		
-		public function hasPermission(){
+		public function hasPermission($key){
 			
-			$group = $this->_db->get('group', array('id', '=', $this->data()->group));
-			print_r($group->first());
+			global $group;
+			$group = $this->_db->get('groups', array('id', '=', $this->data()->groupid));
+			
+			if($group->count()){
+				
+				$permissions = json_decode($group->first()->permissions, true);
+				
+				if($permissions[$key] == true){
+					
+					return true;
+				}
+			}
+			return false;
 		}
 		
 		

@@ -1,7 +1,7 @@
 <?php
 	//setup files
 	//Database connection
-	include('config/connection.php'); 
+	include_once('core/init.php'); 
 	
 	# Constants:
 	DEFINE('D_TEMPLATE', 'template');
