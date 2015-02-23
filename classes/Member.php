@@ -20,7 +20,7 @@
 					if($this->find($member)){
 						$this->_isLoggedIn = true;
 					} else {
-						//process logout
+						$this->Find($member);
 					}
 				}
 			} else {
@@ -97,21 +97,17 @@
 		
 		public function hasPermission($key){
 			
-			global $group;
-			$group = $this->_db->get('groups', array('id', '=', $this->data()->groupid));
+			$group =$this->_db->get('groups', array('id', '=', $this->data()->groupid));
 			
 			if($group->count()){
-				
 				$permissions = json_decode($group->first()->permissions, true);
 				
 				if($permissions[$key] == true){
-					
 					return true;
 				}
 			}
 			return false;
 		}
-		
 		
 		public function exists() {
 			

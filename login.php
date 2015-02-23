@@ -15,8 +15,10 @@
 				$remember =(Input::get('remember') === 'on')  ? true : false;
 				$login = $member->login(Input::get('username'), Input::get('password'), $remember);
 				
-				if($login){
-					Redirect::to('index.php');
+				if($login && !$member->hasPermission('admin')){
+					Redirect::to('profile.php');
+				}else if($login && $member->hasPermission('admin')){
+					Redirect::to('administrator.php');
 				}else {
 					echo 'Sorry, logging in failed.';
 				}
@@ -43,29 +45,23 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
-						<div class="panel panel-info">
+						<div class="panel panel-success">
 							<div class="panel-heading">
 								<strong>Login</strong>
 							</div><!--- End panel heading -->
 							<div class="panel-body">
 								<form action="" method="post">
 									<div class="form-group">
-										<label for="username">Username</label>
 										<input type="text" class="form-control" name="username" id="username" autocomplete="off" placeholder="Enter username">
 									</div>
-										
 									<div class="form-group">
-										<label for="password">Choose a password</label>
 										<input type="password" class="form-control" name="password" id="password" autocomplete="off" placeholder="Enter Password">
 									</div>
-										
 									<div class="checkbox">
 										<label for="remember">
 										<input type="checkbox" name="remember" id="remember"> Remember Me
 										</label>
 									</div>
-										
-										
 									<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 									<input type="submit"  class="btn btn-default" value="Log in">
 								</form>

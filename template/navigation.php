@@ -1,7 +1,7 @@
 
 
 
-<nav class="navbar navbar-default" role="navigator">
+<nav class="navbar navbar-success" role="navigator">
 	
 	<!---
 	<?php if($debug == 1) { ?>

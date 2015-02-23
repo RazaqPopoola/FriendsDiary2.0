@@ -1,5 +1,5 @@
 <?php
-	//setup files
+
 	//Database connection
 	include_once('core/init.php'); 
 	
@@ -24,5 +24,12 @@
 		//page setup
 		$page = data_page($dbc, $pageid);
 		
+		
+	/*//page setup
+	$query = "SELECT * FROM pages WHERE id = 1";
+	$result = mysql_query($dbc, $query);
+	
+	$page = mysql_fetch_assoc($result);*/
+	
 		
 ?>

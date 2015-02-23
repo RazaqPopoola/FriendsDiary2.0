@@ -69,29 +69,22 @@
 			<div class="container">
 				<div class="row"> 
 					<div class="col-md-4 col-md-offset-4"> 
-						<div class="panel panel-info">
+						<div class="panel panel-success">
 							<div class="panel-heading">
 								<strong>Register</strong>
 							</div><!--- End panel heading -->
 							<div class="panel-body">	
 								<form action="" method="post">
 									<div class="form-group">
-										<label for="username">Username</label>
 										<input type="text" class="form-control" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off" placeholder="Enter Your Username">
 									</div>
-									
 									<div class="form-group">
-										<label for="password">Choose a password</label>
 										<input type="password" class="form-control" name="password" id="password" placeholder="Enter Your Password">
 									</div>
-									
 									<div class="form-group">
-										<label for="password_again">Enter your password again</label>
 										<input type="password" class="form-control" name="password_again" id="password_again" placeholder="Enter Your Password Again">
 									</div>
-									
 									<div class="form-group">
-										<label for="name">Your name</label>
 										<input type="text" class="form-control" name="name" value="<?php echo escape(Input::get('name')); ?>" id="name" placeholder="Enter Your Full Names">
 									</div>
 									
