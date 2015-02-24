@@ -11,7 +11,7 @@
 	include('functions/template.php');
 	
 	#site setup
-	$debug = data_setting_value($dbc, 'debug-status');
+	//$debug = data_setting_value($dbc, 'debug-status');
 	
 	$site_title = 'FriendsDairy WebApps';
 	
@@ -25,11 +25,11 @@
 		$page = data_page($dbc, $pageid);
 		
 		
-	/*//page setup
-	$query = "SELECT * FROM pages WHERE id = 1";
+	//page setup
+	$query = "SELECT * FROM pages WHERE id = $pageid";
 	$result = mysql_query($dbc, $query);
 	
-	$page = mysql_fetch_assoc($result);*/
+	$page = mysql_fetch_assoc($result);
 	
 		
 ?>

@@ -10,11 +10,15 @@
 	-->
 	<div class="container">
 		<ul class="nav navbar-nav">
-		   <!---
+		   
 		    <?php
 				nav_main($dbc, $pageid);
 			?>
-			-->
+	
+			
+			<div class="navbar-brand">
+				FriendsDiary
+			</div>
 			<li><a href="#">Project</a></li>
 			<li><a href="#">Education</a></li>
 			<li><a href="#">Experience</a></li>
