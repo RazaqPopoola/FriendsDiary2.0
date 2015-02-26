@@ -1,3 +1,4 @@
+<!---
 <?php
 
 	require_once 'core/init.php';
@@ -27,23 +28,24 @@
 		echo '<p>You need to <a href="login.php">log in</a> or <a href="register.php">register</a></p>';
 	}
 ?>	
-		
+-->	
+	
 	
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<tittle>Home</tittle>
+		<title>Home</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<?php include('settings/css.php'); ?>
 		<?php include('settings/js.php'); ?>
-		<?php include('settings/setup.php'); ?>
 	</head>
 	<body>
 		<div id="wrap">
+			<?php include('template/navigation.php') ?>;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="panel panel-success">
+						<div class="panel panel-default">
 							<div class="panel-heading">
 								<strong>Login</strong>
 							</div><!--- End panel heading -->
@@ -72,9 +74,9 @@
 					</div><!--- End Col-->
 					
 					<div class="col-md-8">
-						<div class="panel panel-success">
+						<div class="panel panel-default">
 							<div class="panel-heading">
-								<strong>List of Diary</strong>
+								<strong>Wellcome to FriendsDiary</strong>
 							</div><!--- End panel heading -->
 							<div class="panel-body">
 								
@@ -90,7 +92,7 @@
 			<div class="container">
 				<div class="row"> 
 					<div class="col-md-4"> 
-						<div class="panel panel-success">
+						<div class="panel panel-default">
 							<div class="panel-heading">
 								<strong>Register</strong>
 							</div><!--- End panel heading -->

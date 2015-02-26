@@ -1,21 +1,10 @@
 
 
 
-<nav class="navbar navbar-success" role="navigator">
+<nav class="navbar navbar-inverse navbar-static-top">
 	
-	<!---
-	<?php if($debug == 1) { ?>
-		<button id="btn_debug" class="btn btn-default"><i class="fa fa-bug"></i></button>
-	<?php } ?>*/
-	-->
 	<div class="container">
 		<ul class="nav navbar-nav">
-		   
-		    <?php
-				nav_main($dbc, $pageid);
-			?>
-	
-			
 			<div class="navbar-brand">
 				FriendsDiary
 			</div>
@@ -24,8 +13,18 @@
 			<li><a href="#">Experience</a></li>
 			<li><a href="#">Media</a></li>
 			<li><a href="#">Contact</a></li>
-			
 		</ul>
+		
+		<div class="pull-right">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="logout.php">logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</div>	
 </nav><!-- End Nav -->
 			

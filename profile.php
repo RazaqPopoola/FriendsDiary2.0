@@ -26,13 +26,14 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<tittle>Login</tittle>
+		<title>Profile</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<?php include('settings/css.php'); ?>
 		<?php include('settings/js.php'); ?>
 	</head>
 	<body>
 		<div id="wrap">
+			<?php include('template/navigation.php') ?>;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
@@ -41,7 +42,9 @@
 								<strong>Member Profile</strong>
 							</div><!--- End panel heading -->
 							<div class="panel-body">
-								
+								<div class="container">
+      	                 			<img src="" class="img-responsive" alt="Profile Photo" width="200" height="300">
+   							 	</div>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->
 					</div><!--- End Col-->
