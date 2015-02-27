@@ -48,7 +48,7 @@
 		box-shadow: 2px 2px 5px #CCCCCC;
 	}	
 	
-	#console-debug pre{
+	#profile-picture{
 		
 	}							
 </style>

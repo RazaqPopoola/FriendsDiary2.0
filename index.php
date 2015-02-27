@@ -41,11 +41,11 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<?php include('template/navigation.php') ?>;
+			<?php include('template/planNavigation.php') ?>;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="panel panel-default">
+						<div class="panel panel-success">
 							<div class="panel-heading">
 								<strong>Login</strong>
 							</div><!--- End panel heading -->
@@ -67,14 +67,14 @@
 										
 										
 									<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-									<input type="submit"  class="btn btn-default" value="Log in">
+									<input type="submit"  class="btn btn-success" value="Log in">
 								</form>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->
 					</div><!--- End Col-->
 					
 					<div class="col-md-8">
-						<div class="panel panel-default">
+						<div class="panel panel-success">
 							<div class="panel-heading">
 								<strong>Wellcome to FriendsDiary</strong>
 							</div><!--- End panel heading -->
@@ -92,7 +92,7 @@
 			<div class="container">
 				<div class="row"> 
 					<div class="col-md-4"> 
-						<div class="panel panel-default">
+						<div class="panel panel-success">
 							<div class="panel-heading">
 								<strong>Register</strong>
 							</div><!--- End panel heading -->
@@ -111,13 +111,11 @@
 										<input type="text" class="form-control" name="name" value="<?php echo escape(Input::get('name')); ?>" id="name" placeholder="Enter Your Full Names">
 									</div>
 									<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-									<input type="submit" class="btn btn-default" value="Register">
+									<input type="submit" class="btn btn-success" value="Register">
 								</form>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->
 					</div><!--- End Col-->
-					
-					
 				</div><!--- End Row -->
 			</div><!--- End container -->
 		</div><!--- End wrap -->
@@ -125,8 +123,6 @@
 	<footer>
 		<?php include('template/footer.php')?>
 	</footer>
-	
-	
 </html>	
 	
 	

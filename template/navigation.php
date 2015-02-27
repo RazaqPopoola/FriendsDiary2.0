@@ -21,6 +21,8 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="logout.php">logout</a></li>
+						<li><a href="update.php">Update</a></li>
+						<li><a href="changepassword.php">Change Password</a></li>
 					</ul>
 				</li>
 			</ul>

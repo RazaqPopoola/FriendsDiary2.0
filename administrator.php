@@ -12,9 +12,56 @@
 		<div id="wrap">
 			<?php include('template/navigation.php'); ?>		
 				<div class="container">
-					<i class=" fa fa-fax fax 5x"></i>
-					<i class="fa fa-university"></i>	
-							
+					<div class="row"> 
+						<div class="col-md-3"> 
+							<div class="panel panel-success">
+								<div class="panel-heading">
+								<strong>Admin Profile</strong>
+							</div><!--- End panel heading -->
+								
+						</div><!--- End Col-->
+					</div><!--- End Row -->	
+					<div class="col-md-5"> 
+							<div class="panel panel-success">
+								<div class="panel-heading">
+								<strong>Members List</strong>
+							</div><!--- End panel heading -->
+								
+						</div><!--- End Col-->
+					</div><!--- End Row -->	
+					<div class="col-md-4"> 
+							<div class="panel panel-success">
+								<div class="panel-heading">
+								<strong>Members List</strong>
+							</div><!--- End panel heading -->
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table">
+								        <thead>
+								          <tr>
+								            <th>Member Names</th>
+								            <th>Email Address</th>
+								          </tr>
+								        </thead>
+								        <tbody>
+								          <tr>
+								            <td>John Murphy</td>
+								            <td>johnmurphy@gmail.com</td>
+								          </tr>
+								          <tr>
+								            <td>Debbie Porter</td>
+								            <td>debbieporter@yahoo.com</td>
+								          </tr>
+								          <tr>
+								            <td>Glory Popoola</td>
+								            <td>glorypopoola@hotmail.com</td>
+								          </tr>
+								        </tbody>
+							      </table>
+								</div>
+							</div><!--- End panel body -->		
+						</div><!--- End Col-->
+					</div><!--- End Row -->	
 				</div><!-- End container -->		
 		</div><!--- End wrap -->
 	</body>	

@@ -43,7 +43,7 @@
 							</div><!--- End panel heading -->
 							<div class="panel-body">
 								<div class="container">
-      	                 			<img src="" class="img-responsive" alt="Profile Photo" width="200" height="300">
+      	                 			<img src="..." alt="..." class="img-thumbnail" width="200" height="200">
    							 	</div>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->
