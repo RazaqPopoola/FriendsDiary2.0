@@ -1,7 +1,7 @@
 <?php
 	class Validate {
 		
-		private $_passed = false,
+		protected $_passed = false,
 				$_errors = array(),
 				$_db = null;
 		
@@ -15,7 +15,7 @@
 			foreach($items as $item => $rules) {
 				foreach($rules as $rule => $rule_value) {
 					
-					$value = trim($source[$item]);
+					$value = trim(isset($source[$item]));
 					$item = escape($item);
 					
 					if($rule === 'required' && empty($value)) {
@@ -54,6 +54,7 @@
 					}
 					
 				}
+			
 			}
 				
 				if(empty($this->_errors)){

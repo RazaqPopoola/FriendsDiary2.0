@@ -95,6 +95,8 @@
 			}
 		}
 		
+		
+		
 		public function hasPermission($key){
 			
 			$group =$this->_db->get('groups', array('id', '=', $this->data()->groupid));
@@ -108,6 +110,7 @@
 			}
 			return false;
 		}
+		
 		
 		public function exists() {
 			

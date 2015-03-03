@@ -29,7 +29,104 @@
 	}
 ?>	
 -->	
+<?php
+
+	require_once 'core/init.php';	
 	
+	
+	if(isset($_POST['login'])){
+		if(Input::exists()) {
+			if(Token::check(Input::get('token'))) {
+				
+				$validate = new Validate();
+				$validation = $validate->check($_POST, array(
+						'username' => array('required' => true),
+						'password' => array('required' => true)				
+				));
+				
+				if($validation->passed()) {
+					$member = new Member();
+					$remember =(Input::get('remember') === 'on')  ? true : false;
+					$login = $member->login(Input::get('username'), Input::get('password'), $remember);
+					
+					if($login && !$member->hasPermission('admin')){
+						Redirect::to('profile.php');
+					}else if($login && $member->hasPermission('admin')){
+						Redirect::to('administrator.php');
+					}else {
+						echo 'Sorry, logging in failed.';
+					}
+							
+				}else {
+					foreach($validation->errors() as $error) {
+						echo $error, '<br>';
+					}
+				}
+			}
+		}
+	}
+	
+		
+	if(isset($_POST['register'])){	
+		if(Input::exists()) {
+			if(Token::check(Input::get('token'))) {
+				
+				$validate = new Validate();
+				$validation = $validate->check($_POST, array(
+						'username' => array(
+							'required' => true,
+							'min' => 2,
+							'max' => 20,
+							'unique' => 'members'
+						),
+						'password' => array(
+							'required' => true,
+							'min' => 6
+						),
+						'password_again' => array(
+							'required' => true,
+							'matches' => 'password'
+						),
+						'name' => array(
+							'required' => true,
+							'min' => 2,
+							'max' => 50
+						)
+				));
+				
+				if($validation->passed()) {
+					$member = new Member();
+					
+					$salt = Hash::salt(32);
+		
+					try {
+						 $member->create(array(
+						 	'username' => Input::get('username'),
+						 	'password' => Hash::make(Input::get('password'), $salt),
+						 	'salt' => $salt,
+						 	'name' => Input::get('name'),
+						 	'datejoined' => date('Y-m-d H:i:s'),
+						 	'groupid' => 1
+						 ));
+						 
+						 Session::flash('home', 'You have been registered and can now log in!');
+						 Redirect::to('index.php');
+						 
+					}catch (Exception $e) {
+						die($e->getMessage());
+					}
+				} else {
+					foreach($validation->errors() as $error) {
+						echo $error, '<br>';
+					}
+				}
+			}
+		}
+	}
+		
+
+		
+?>
 	
 <!DOCTYPE HTML>
 <html>
@@ -67,7 +164,7 @@
 										
 										
 									<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-									<input type="submit"  class="btn btn-success" value="Log in">
+									<input type="submit" name="login" id="login" class="btn btn-success" value="Log in">
 								</form>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->
@@ -111,7 +208,7 @@
 										<input type="text" class="form-control" name="name" value="<?php echo escape(Input::get('name')); ?>" id="name" placeholder="Enter Your Full Names">
 									</div>
 									<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-									<input type="submit" class="btn btn-success" value="Register">
+									<input type="submit" name="register" id="register" class="btn btn-success" value="Register">
 								</form>
 							</div><!--- End panel body -->	
 						</div>	<!--- End panel-->

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -16,9 +19,18 @@
 						<div class="col-md-3"> 
 							<div class="panel panel-success">
 								<div class="panel-heading">
-								<strong>Admin Profile</strong>
-							</div><!--- End panel heading -->
-								
+									<strong>Admin Profile</strong>
+								</div><!--- End panel heading -->
+								<div class="panel-body">
+									<div class="img-thumbnail">
+      	                 				<img src="..." alt="..."  width="171" height="180">
+      	                 			 <div class="caption">
+        								<h5>Profile Picture</h5>
+        									<p>...</p>
+        								<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      								</div>
+      	                 		</div>
+							</div><!--- End panel body -->	
 						</div><!--- End Col-->
 					</div><!--- End Row -->	
 					<div class="col-md-5"> 
@@ -26,6 +38,7 @@
 								<div class="panel-heading">
 								<strong>Members List</strong>
 							</div><!--- End panel heading -->
+							
 								
 						</div><!--- End Col-->
 					</div><!--- End Row -->	
